@@ -1,0 +1,4 @@
+92ab1f80ce61729c71bbce8ddf3c9556 *tinyml_f407_A.elf
+0613ffd9c16c444f4a3ba617d45fd1fc *tinyml_f407_A.bin
+7b7140236da0b8bc6e7a6d663d16eb21 *tinyml_f407_B.elf
+20570012c4d8f77f19b880971f15acf9 *tinyml_f407_B.bin

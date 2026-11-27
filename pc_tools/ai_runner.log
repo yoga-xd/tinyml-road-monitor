@@ -1,0 +1,780 @@
+[D:AiRunner] creating "AiRunner" object (v3.2)
+[D:AiRunner] resolving('desc' parameter: 'serial:COM3:115200')..
+[D:AiRunner] creating <stm_ai_runner.pb_mgr_drv.AiPbMsg object at 0x0000021D4006C070> (v2.0)
+[D:AiRunner] creating <stm_ai_runner.serial_hw_drv.SerialHwDriver object at 0x0000021D4006C100>
+[D:AiRunner] 'desc' parameter for 'AiPbMsg' driver: 'COM3:115200'
+[D:AiRunner] connecting..
+[D:AiRunner] baud=115200 device=COM3 timeout=0.1 io_hw_log=None
+[D:AiRunner] 0: {'device': 'COM3'}
+[D:AiRunner] -> [sync msg]
+[D:AiRunner]    version: 769
+[D:AiRunner]    capability: 1
+[D:AiRunner]    rtid: 65537
+[D:AiRunner] <- [sync msg]
+[D:AiRunner] CMD_SYNC v3.1
+[D:AiRunner] connection successful
+[D:AiRunner] -> [sys_info msg]
+[D:AiRunner]    devid: 1043
+[D:AiRunner]    sclock: 16000000
+[D:AiRunner]    hclock: 16000000
+[D:AiRunner]    cache: 16844544
+[D:AiRunner]    com_param: 0
+[D:AiRunner] <- [sys_info msg]
+[D:AiRunner] -> [model_info msg]
+[D:AiRunner]    name: "network"
+[D:AiRunner]    rtid: 65537
+[D:AiRunner]    signature: "0xf9b415d34d0f10a0ec688c909a25f172"
+[D:AiRunner]    compile_datetime: "Nov 23 2026 12:35:07"
+[D:AiRunner]    runtime_version: 167837696
+[D:AiRunner]    tool_version: 33685504
+[D:AiRunner]    n_macc: 112048
+[D:AiRunner]    n_nodes: 11
+[D:AiRunner]    n_inputs: 2
+[D:AiRunner]    inputs {
+[D:AiRunner]      name: ""
+[D:AiRunner]      format: 142741568
+[D:AiRunner]      size: 128
+[D:AiRunner]      n_dims: 16777220
+[D:AiRunner]      dims: 1
+[D:AiRunner]      dims: 1
+[D:AiRunner]      dims: 1
+[D:AiRunner]      dims: 128
+[D:AiRunner]      scale: 0.0
+[D:AiRunner]      zeropoint: 0
+[D:AiRunner]      addr: 536887520
+[D:AiRunner]      flags: 1025
+[D:AiRunner]    }
+[D:AiRunner]    inputs {
+[D:AiRunner]      name: ""
+[D:AiRunner]      format: 142741568
+[D:AiRunner]      size: 24
+[D:AiRunner]      n_dims: 16777220
+[D:AiRunner]      dims: 1
+[D:AiRunner]      dims: 24
+[D:AiRunner]      dims: 1
+[D:AiRunner]      dims: 1
+[D:AiRunner]      scale: 0.0
+[D:AiRunner]      zeropoint: 0
+[D:AiRunner]      addr: 536888032
+[D:AiRunner]      flags: 1025
+[D:AiRunner]    }
+[D:AiRunner]    n_outputs: 1
+[D:AiRunner]    outputs {
+[D:AiRunner]      name: ""
+[D:AiRunner]      format: 142741568
+[D:AiRunner]      size: 4
+[D:AiRunner]      n_dims: 16777220
+[D:AiRunner]      dims: 1
+[D:AiRunner]      dims: 4
+[D:AiRunner]      dims: 1
+[D:AiRunner]      dims: 1
+[D:AiRunner]      scale: 0.0
+[D:AiRunner]      zeropoint: 0
+[D:AiRunner]      addr: 536884176
+[D:AiRunner]      flags: 1026
+[D:AiRunner]    }
+[D:AiRunner]    n_activations: 1
+[D:AiRunner]    activations {
+[D:AiRunner]      name: "acts"
+[D:AiRunner]      format: 263232
+[D:AiRunner]      size: 12160
+[D:AiRunner]      n_dims: 16777217
+[D:AiRunner]      dims: 12160
+[D:AiRunner]      scale: 0.0
+[D:AiRunner]      zeropoint: 0
+[D:AiRunner]      addr: 0
+[D:AiRunner]      flags: 8
+[D:AiRunner]    }
+[D:AiRunner]    n_params: 1
+[D:AiRunner]    params {
+[D:AiRunner]      name: "params"
+[D:AiRunner]      format: 263232
+[D:AiRunner]      size: 14608
+[D:AiRunner]      n_dims: 16777217
+[D:AiRunner]      dims: 14608
+[D:AiRunner]      scale: 0.0
+[D:AiRunner]      zeropoint: 0
+[D:AiRunner]      addr: 0
+[D:AiRunner]      flags: 8
+[D:AiRunner]    }
+[D:AiRunner]    runtime_desc: "GCC 12.3.1 AE536891"
+[D:AiRunner] <- [model_info msg]
+[D:AiRunner] RT_DECODER: ST.AI (legacy api), id=0x10001, compiler=GCC, act=True, params=True, macc=True
+[D:AiRunner] DEV_DECODER: stm32 family - 0x413 - STM32F4x @16/16MHz, ['fpu', 'art_lat=0', 'art_prefetch', 'art_icache', 'art_dcache']
+[D:AiRunner] discover() found="network"
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221275] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221309] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221269] dur=76.329ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.329ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221286] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221327] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221277] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221321] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221248] dur=76.328ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.328ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221288] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221287] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221258] dur=76.329ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.329ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221313] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221295] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221316] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221315] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221290] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221325] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221228] dur=76.327ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.327ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221267] dur=76.329ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.329ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221297] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221291] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221274] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221306] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221270] dur=76.329ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.329ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221299] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221321] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221294] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221280] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221296] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221321] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221322] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221276] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221292] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221312] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221280] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221279] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221316] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221277] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221261] dur=76.329ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.329ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221301] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221290] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221296] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221290] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221306] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221309] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221278] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221274] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221312] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221303] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221317] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221331] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221283] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221285] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221284] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221286] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221320] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221271] dur=76.329ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.329ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221280] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221325] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221315] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221340] dur=76.334ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.334ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221298] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221314] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221300] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221299] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221281] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221283] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221312] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221307] dur=76.332ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.332ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221288] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221290] dur=76.331ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.331ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221323] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221287] dur=76.330ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.330ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221326] dur=76.333ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.333ms)
+[D:AiRunner] -> Requested RUN mode: Mode.IO_ONLY (param=0b1, option=0x1)
+[D:AiRunner]    SEND INPUT TENSOR #0 ((1, 128, 1, 1)/float32) last=False..
+[D:AiRunner]    SEND INPUT TENSOR #1 ((1, 24, 1, 1)/float32) last=True..
+[D:AiRunner]    ----------------------------------------
+[D:AiRunner]    INFERENCE DONE
+[D:AiRunner]     name="network" counters="CPU cycles"[1221268] dur=76.329ms id=0.0 type=0x0/NONE,"Output (0x0)"
+[D:AiRunner]    RECEIVE OUTPUT TENSOR #0 last=True..
+[D:AiRunner]     IOTensor: O_0, , 0x200033d0 f32[1,1,1,4], 16 Bytes
+[D:AiRunner] <- done (target dur=76.329ms)
+[D:AiRunner] _release_all(Proto-buffer driver v2.0 (msg v3.1) (Serial driver v1.0 - COM3:115200) ['network'])

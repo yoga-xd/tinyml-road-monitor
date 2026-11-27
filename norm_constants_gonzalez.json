@@ -1,0 +1,24 @@
+{
+  "note": "逐事件 z-score 标准化: 板端对每个 128 点窗口(2.56s@50Hz)求均值/方差后标准化, 无需固化常数",
+  "normalization": "per-window per-channel z-score",
+  "unit": "acc_z m/s^2 (含重力直流, 标准化后去除)",
+  "sample_rate_hz": 50,
+  "window_points": 128,
+  "window_seconds": 2.56,
+  "classes": [
+    "正常",
+    "坑洞",
+    "减速带",
+    "磨损"
+  ],
+  "n_params": 1796,
+  "seed": 42,
+  "cv_accuracy_mean": 0.696,
+  "cv_accuracy_std": 0.09372299611087986,
+  "holdout_test_accuracy": 0.72,
+  "baseline_repo": {
+    "XGBoost_holdout": 0.94,
+    "XGBoost_cv": 0.875,
+    "SVM_holdout": 0.94
+  }
+}

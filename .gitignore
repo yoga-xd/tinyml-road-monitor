@@ -1,0 +1,36 @@
+# ===== 本地私有文件（不上传）=====
+项目进度.md
+BOARD_ARRIVAL_CHECKLIST.md
+教师考核对齐与方案优化.md
+结题报告*.docx
+结题报告*.pdf
+
+# ===== 原厂固件备份 =====
+backup_other_firmware_512K.bin
+backup/B板原固件_20261125/
+
+# ===== 历史固件版本目录（保留 20261125_双板定版 与 zip）=====
+backup/20261123_A板_v3_按键扩展/
+backup/20261123_A板_协议v2_含活动电平/
+backup/20261123_A板全功能版/
+backup/20261123_B板_RX_v1/
+backup/20261125_A_final/
+backup/20261125_A_pause_sync/
+backup/20261125_A_v4_dpl/
+
+# ===== 历史迭代模型（定版 model_gonzalez_crop.* 保留）=====
+model_gonzalez.h5
+model_gonzalez_s1.h5
+model_gonzalez_s1_scalers.json
+model_gonzalez_s2.h5
+model_gonzalez_s2_scalers.json
+model_gonzalez_tuned.h5
+model_gonzalez_tuned_scalers.json
+model_gonzalez_pretrained.h5
+model_gonzalez_pretrained_scalers.json
+
+# ===== 系统杂项 =====
+__pycache__/
+*.pyc
+Thumbs.db
+desktop.ini

@@ -1,0 +1,18 @@
+{
+  "model": "model_gonzalez_crop.h5",
+  "arch": "Conv1D(16,5)->MP2->Conv1D(32,3)->GAP->Drop(0.3) + Dense(64) 混合双输入",
+  "keras_inputs": [
+    "(None, 128, 1)",
+    "(None, 24)"
+  ],
+  "tflite_float32": {
+    "file": "D:/tinyml_project\\model_gonzalez_crop.tflite",
+    "size_kb": 19.72265625,
+    "max_abs_diff": 2.384185791015625e-07,
+    "mean_abs_diff": 4.020009569671856e-08,
+    "argmax_agree": "75/75",
+    "verdict": "通过"
+  },
+  "tflite_int8_ref": "转换失败",
+  "note": "部署主线路径: h5 或 float32 tflite 直接进 X-CUBE-AI; int8 仅作体积参考"
+}
